@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wifi Panamá</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sound_label">Asistente de Voz</string>
+    <string name="route_label">Mantenga pulsado un punto en el mapa para calcular la ruta a ese punto o Haga clic en el icono "Cómo llegar"</string>
+    <string name="sound">Sonido</string>
+    <string name="actionBar_direction">Obtener Dirección</string>
+    <string name="geocode_url">http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer</string>
+    <string name="useCurrlocation">Utilice ubicación actual</string>
+    <string name="routing_title">Ruteo</string>
+    <string name="swap_addresses">Cambiar Direciones</string>
+    <string name="clearText">Clic en el Texto</string>
+    <string name="route">Ruta</string>
+    <string name="my_location">Mi Localización</string>
+    <string name="title_activity_sign_in">wifipanama</string>
+    <!-- sign in activity -->
+    <string name="title_sign_in_activity">Iniciar Sesión</string>
+    <string name="specify_portal_url">Ingrese la URL de su organización o su Portal de ArcGIS</string>
+    <string name="continue_label">Continuar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="verifying_portal">Verificando el portal</string>
+    <string name="portal_url_hint">e.j., http://www.arcgis.com</string>
+    <string name="failed_sign_in">Inicio de Sesión fallido.</string>
+    <string name="client_id">Q6MwArUJEMC5dkOU</string>
+    <string name="title_activity_pantalla_inicial">PantallaInicial</string>
+
+</resources>
