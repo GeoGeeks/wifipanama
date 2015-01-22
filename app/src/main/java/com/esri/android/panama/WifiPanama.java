@@ -9,19 +9,24 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -73,7 +78,7 @@ import com.esri.core.tasks.na.StopGraphic;
 
 
 
-public class WifiPanama  extends Activity implements RoutingListFragment.onDrawerListSelectedListener,
+public class WifiPanama  extends ActionBarActivity implements RoutingListFragment.onDrawerListSelectedListener,
         RoutingDialogFragment.onGetRoute {
 
     public static MapView map = null;
@@ -131,16 +136,16 @@ public class WifiPanama  extends Activity implements RoutingListFragment.onDrawe
         super.onCreate(savedInstanceState);
 
         ArcGISRuntime.setClientId(getString(R.string.client_id));
-       /* final ActionBar actionBar = getActionBar();
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
         @SuppressWarnings("deprecation")
         BitmapDrawable background = new BitmapDrawable(
                 BitmapFactory.decodeResource(getResources(),
                         R.drawable.banner));
-        getActionBar().setIcon(
+        actionBar.setIcon(
                 new ColorDrawable(getResources().getColor(android.R.color.transparent)));
         background.setTileModeX(android.graphics.Shader.TileMode.REPEAT);
-        actionBar.setBackgroundDrawable(background);*/
+        actionBar.setBackgroundDrawable(background);
         setContentView(R.layout.main);
 
         // Retrieve the map and initial extent from XML layout
@@ -902,8 +907,8 @@ public class WifiPanama  extends Activity implements RoutingListFragment.onDrawe
                         Double lat = (Double) popupContainer.getCurrentPopup().getFeature().getAttributeValue("LATITUD");
                         Double lon = (Double) popupContainer.getCurrentPopup().getFeature().getAttributeValue("LONGITUD");
                         Point p = GeometryEngine.project(lon,lat, egs);
-                        Point p1 = GeometryEngine.project(-79.404357, 9.090682, egs);
-                        //Point p1 = (Point) GeometryEngine.project(mLocation, egs, egs);
+                        //Point p1 = GeometryEngine.project(-79.404357, 9.090682, egs);
+                        Point p1 = (Point) GeometryEngine.project(mLocation, egs, egs);
                         clearAll();
                         QueryDirections(p1, p);
                         popupDialog.dismiss();
